@@ -1,0 +1,293 @@
+{
+  "schema_version": "1.3",
+  "title": "python Blueprint",
+  "profile": "standard",
+  "rooms": [
+    {
+      "room_id": "ledger_starter",
+      "label": "ledger_starter",
+      "member_id": ".",
+      "language": "python",
+      "wall_rating": "package_lobby",
+      "module_count": 1,
+      "max_modules": 35,
+      "public_symbol_count": 0,
+      "breaker_count": 0,
+      "topological_rank": 0,
+      "redline_status": "existing"
+    },
+    {
+      "room_id": "ledger_starter/domain",
+      "label": "domain",
+      "member_id": ".",
+      "language": "python",
+      "wall_rating": "compartment_wall",
+      "module_count": 2,
+      "max_modules": 35,
+      "public_symbol_count": 4,
+      "breaker_count": 4,
+      "topological_rank": 2,
+      "redline_status": "existing"
+    },
+    {
+      "room_id": "ledger_starter/gateway",
+      "label": "gateway",
+      "member_id": ".",
+      "language": "python",
+      "wall_rating": "compartment_wall",
+      "module_count": 2,
+      "max_modules": 35,
+      "public_symbol_count": 1,
+      "breaker_count": 1,
+      "topological_rank": 1,
+      "redline_status": "existing"
+    }
+  ],
+  "walls": [
+    {
+      "wall_id": "wall:ledger_starter:envelope",
+      "room_id": "ledger_starter",
+      "adjacent_room_id": "",
+      "rating": "package_lobby",
+      "thickness_px": 1
+    },
+    {
+      "wall_id": "wall:ledger_starter/domain:envelope",
+      "room_id": "ledger_starter/domain",
+      "adjacent_room_id": "",
+      "rating": "compartment_wall",
+      "thickness_px": 2
+    },
+    {
+      "wall_id": "wall:ledger_starter/gateway:envelope",
+      "room_id": "ledger_starter/gateway",
+      "adjacent_room_id": "",
+      "rating": "compartment_wall",
+      "thickness_px": 2
+    },
+    {
+      "wall_id": "wall:ledger_starter|ledger_starter/domain",
+      "room_id": "ledger_starter",
+      "adjacent_room_id": "ledger_starter/domain",
+      "rating": "compartment_wall",
+      "thickness_px": 2
+    },
+    {
+      "wall_id": "wall:ledger_starter|ledger_starter/gateway",
+      "room_id": "ledger_starter",
+      "adjacent_room_id": "ledger_starter/gateway",
+      "rating": "compartment_wall",
+      "thickness_px": 2
+    },
+    {
+      "wall_id": "wall:ledger_starter/domain|ledger_starter/gateway",
+      "room_id": "ledger_starter/domain",
+      "adjacent_room_id": "ledger_starter/gateway",
+      "rating": "compartment_wall",
+      "thickness_px": 2
+    }
+  ],
+  "port_pins": [
+    {
+      "pin_id": "ledger_starter::in:SettlementQuote",
+      "room_id": "ledger_starter",
+      "symbol_name": "SettlementQuote",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter::in:SettlementRequest",
+      "room_id": "ledger_starter",
+      "symbol_name": "SettlementRequest",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter::in:build_settlement_quote",
+      "room_id": "ledger_starter",
+      "symbol_name": "build_settlement_quote",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter::in:net_after_fee",
+      "room_id": "ledger_starter",
+      "symbol_name": "net_after_fee",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter::in:parse_and_quote_json",
+      "room_id": "ledger_starter",
+      "symbol_name": "parse_and_quote_json",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter/domain::in:CALL_CONFIG",
+      "room_id": "ledger_starter/domain",
+      "symbol_name": "CALL_CONFIG",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter/domain::in:SettlementQuote",
+      "room_id": "ledger_starter/domain",
+      "symbol_name": "SettlementQuote",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter/domain::in:SettlementRequest",
+      "room_id": "ledger_starter/domain",
+      "symbol_name": "SettlementRequest",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter/domain::in:build_settlement_quote",
+      "room_id": "ledger_starter/domain",
+      "symbol_name": "build_settlement_quote",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter/domain::in:net_after_fee",
+      "room_id": "ledger_starter/domain",
+      "symbol_name": "net_after_fee",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter/gateway::in:parse_and_quote_json",
+      "room_id": "ledger_starter/gateway",
+      "symbol_name": "parse_and_quote_json",
+      "direction": "inbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter::out:ledger_starter/domain",
+      "room_id": "ledger_starter",
+      "symbol_name": "out->ledger_starter/domain",
+      "direction": "outbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter::out:ledger_starter/gateway",
+      "room_id": "ledger_starter",
+      "symbol_name": "out->ledger_starter/gateway",
+      "direction": "outbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    },
+    {
+      "pin_id": "ledger_starter/gateway::out:ledger_starter/domain",
+      "room_id": "ledger_starter/gateway",
+      "symbol_name": "out->ledger_starter/domain",
+      "direction": "outbound_port",
+      "has_circuit_breaker": true,
+      "redline_status": "existing"
+    }
+  ],
+  "circuit_breakers": [
+    {
+      "breaker_id": "ledger_starter/domain::cb:SettlementQuote",
+      "room_id": "ledger_starter/domain",
+      "symbol_name": "SettlementQuote",
+      "guard_kind": "strict_schema"
+    },
+    {
+      "breaker_id": "ledger_starter/domain::cb:SettlementRequest",
+      "room_id": "ledger_starter/domain",
+      "symbol_name": "SettlementRequest",
+      "guard_kind": "strict_schema"
+    },
+    {
+      "breaker_id": "ledger_starter/domain::cb:build_settlement_quote",
+      "room_id": "ledger_starter/domain",
+      "symbol_name": "build_settlement_quote",
+      "guard_kind": "validate_call"
+    },
+    {
+      "breaker_id": "ledger_starter/domain::cb:net_after_fee",
+      "room_id": "ledger_starter/domain",
+      "symbol_name": "net_after_fee",
+      "guard_kind": "ensure"
+    },
+    {
+      "breaker_id": "ledger_starter/gateway::cb:parse_and_quote_json",
+      "room_id": "ledger_starter/gateway",
+      "symbol_name": "parse_and_quote_json",
+      "guard_kind": "validate_call"
+    }
+  ],
+  "buses": [
+    {
+      "bus_id": "ledger_starter->ledger_starter/domain",
+      "source_room": "ledger_starter",
+      "target_room": "ledger_starter/domain",
+      "port_symbols": [],
+      "call_count": 0,
+      "has_breaker_guard": true,
+      "redline_status": "existing"
+    },
+    {
+      "bus_id": "ledger_starter->ledger_starter/gateway",
+      "source_room": "ledger_starter",
+      "target_room": "ledger_starter/gateway",
+      "port_symbols": [],
+      "call_count": 0,
+      "has_breaker_guard": true,
+      "redline_status": "existing"
+    },
+    {
+      "bus_id": "ledger_starter/gateway->ledger_starter/domain",
+      "source_room": "ledger_starter/gateway",
+      "target_room": "ledger_starter/domain",
+      "port_symbols": [
+        "build_settlement_quote"
+      ],
+      "call_count": 1,
+      "has_breaker_guard": true,
+      "redline_status": "existing"
+    }
+  ],
+  "external_risers": [
+    {
+      "riser_id": "ledger_starter/domain=>riser:external_package:icontract",
+      "room_id": "ledger_starter/domain",
+      "kind": "external_package",
+      "target_name": "icontract",
+      "redline_status": "existing"
+    },
+    {
+      "riser_id": "ledger_starter/domain=>riser:external_package:pydantic",
+      "room_id": "ledger_starter/domain",
+      "kind": "external_package",
+      "target_name": "pydantic",
+      "redline_status": "existing"
+    },
+    {
+      "riser_id": "ledger_starter/gateway=>riser:external_package:pydantic",
+      "room_id": "ledger_starter/gateway",
+      "kind": "external_package",
+      "target_name": "pydantic",
+      "redline_status": "existing"
+    }
+  ],
+  "invariant_pins": [],
+  "redlines": [],
+  "netlist_digest": "sha256:02a942fa95246442d1e507544b6d655dbd4b797df26d1177a583c1598b7aff4f"
+}

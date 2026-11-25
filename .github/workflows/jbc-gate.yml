@@ -1,0 +1,47 @@
+name: JBC v1.3 Statutory Gate
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  jbc-gate:
+    name: Enforce JBC v1.3, Blueprint LVS, Z3 Contracts, & Python Suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository with full Git graph
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.4.0
+        with:
+          enable-cache: true
+
+      - name: Install Python 3.14 and sync dependencies
+        run: |
+          uv python install 3.14
+          uv sync --all-groups
+
+      - name: Run Ruff, Mypy, and Pytest + Hypothesis
+        run: |
+          uv run ruff check .
+          uv run mypy .
+          uv run pytest
+
+      - name: Enforce Jezz JBC v1.3, Blueprint LVS, and Z3 Contract Proof Gate
+        uses: futileandstupid/jezz@v0.6.0
+        with:
+          mode: ${{ github.event_name == 'pull_request' && 'both' || 'full' }}
+          language: "python"
+          blueprint-target: "blueprint.json"
+          prove: "require-deductive"
