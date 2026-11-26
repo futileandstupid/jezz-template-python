@@ -11,8 +11,8 @@
 - **Native Lint, Strict Types, & Hypothesis Suite:**
   `uv run ruff check . && uv run mypy . && uv run pytest`
 - **JBC Edition 1.3 Static Inspection:**
-  `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.0 jezz inspect .`
+  `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.1 jezz inspect .`
 - **Z3 Deductive Contract Proof Discharge:**
-  `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.0 jezz prove . --require-deductive`
+  `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.1 jezz prove . --require-deductive`
 - **Blueprint CAD & LVS Equivalence Gate (Refresh `blueprint.json` When Modifying Boundaries):**
-  `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.0 jezz blueprint . --verify-target blueprint.json`
+  `uvx --from git+https://github.com/futileandstupid/jezz@v0.6.1 jezz blueprint . --verify-target blueprint.json`
